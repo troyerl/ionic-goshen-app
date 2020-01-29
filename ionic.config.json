@@ -1,6 +1,8 @@
 {
   "name": "goshen-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "21073b43"
 }
