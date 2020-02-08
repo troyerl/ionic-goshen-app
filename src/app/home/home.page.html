@@ -20,6 +20,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="home-container">
+  <h3 style="text-align: center">Recent Activity</h3>
+  <app-home-card *ngFor="let alert of alerts" [data]="alert" (click)="presentModal(true, alert)"></app-home-card>
+  <app-home-card *ngFor="let event of events" [data]="event" (click)="presentModal(false, event)"></app-home-card>
 </ion-content>

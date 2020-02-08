@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Event</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="closeModal()">
+                <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h1 class="title">{{data.title}}</h1>
+  <div class="container">
+    <h3 class="title">Date:</h3>
+    <h3> {{data.date}}</h3>
+  </div>
+  <div class="container">
+    <h3 class="title">Address:</h3>
+    <h3> {{data.address}}</h3>
+  </div>
+  <div class="container">
+    <h3 class="title">Start Time:</h3>
+    <h3> {{data.startTime}}</h3>
+  </div>
+  <div class="container">
+    <h3 class="title">End Time:</h3>
+    <h3> {{data.endTime}}</h3>
+  </div>
+  <ion-button (click)="openMap()" class="direction ion-margin-top"  expand="block" color="primary">Directions</ion-button>
+  <ion-button (click)="closeModal()" class="direction ion-margin-top"  expand="block" color="danger">Close</ion-button>
+</ion-content>

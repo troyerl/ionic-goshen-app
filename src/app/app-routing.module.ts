@@ -21,6 +21,14 @@ const routes: Routes = [
   {
     path: 'settings',
     loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'news-modal',
+    loadChildren: () => import('./modals/news-modal/news-modal.module').then( m => m.NewsModalPageModule)
+  },
+  {
+    path: 'event-modal',
+    loadChildren: () => import('./modals/event-modal/event-modal.module').then( m => m.EventModalPageModule)
   }
 ];
 @NgModule({

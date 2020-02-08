@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
+import {HomeCardComponent} from '../cards/home-card/home-card.component';
+import {NewsModalPage} from '../modals/news-modal/news-modal.page';
+import {EventModalPage} from '../modals/event-modal/event-modal.page';
 
 @NgModule({
   imports: [
@@ -15,6 +18,7 @@ import { HomePage } from './home.page';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+    declarations: [HomePage, HomeCardComponent, NewsModalPage, EventModalPage],
+    entryComponents: [NewsModalPage, EventModalPage]
 })
 export class HomePageModule {}

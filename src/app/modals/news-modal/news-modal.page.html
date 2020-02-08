@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Announcement</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="closeModal()">
+                <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h1 class="ion-text-center">{{data.title}}</h1>
+    <div class="container">
+        <h3 class="title">Date:</h3>
+        <h3> {{data.date}}</h3>
+    </div>
+    <h3 class="message">{{data.message}}</h3>
+    <ion-button (click)="closeModal()" class="direction ion-margin-top"  expand="block" color="danger">Close</ion-button>
+</ion-content>
