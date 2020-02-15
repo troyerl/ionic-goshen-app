@@ -1,0 +1,24 @@
+<ion-card>
+  <ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-card-subtitle class="ion-text-start">{{this.data.type}}</ion-card-subtitle>
+        </ion-col>
+        <ion-col>
+          <ion-card-subtitle class="ion-text-end">{{this.data.date}}</ion-card-subtitle>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card-title class="cap-length">{{this.data.title}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div class="cap-length" *ngIf="data.type === 'Announcement'">
+      {{this.data.message}}
+    </div>
+    <div class="cap-length" *ngIf="data.type === 'Event'">
+      {{this.data.address}}
+    </div>
+  </ion-card-content>
+</ion-card>
