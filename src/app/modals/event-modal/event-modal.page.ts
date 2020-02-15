@@ -7,13 +7,13 @@ import {ModalController} from '@ionic/angular';
     styleUrls: ['./event-modal.page.scss'],
 })
 export class EventModalPage implements OnInit {
-    @Input() data: {};
+    @Input() data: {date: string, address: string, startTime: string, endTime: string};
 
     constructor(public modalController: ModalController) {
     }
 
     ngOnInit() {
-        console.log(this.data);
+
     }
 
     async closeModal() {

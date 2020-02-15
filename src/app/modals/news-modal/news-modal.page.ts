@@ -13,7 +13,7 @@ export class NewsModalPage implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.data);
+
     }
 
     async closeModal() {
