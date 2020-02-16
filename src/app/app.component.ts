@@ -16,7 +16,7 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private router: Router
+    private router: Router,
   ) {
     this.initializeApp();
   }
@@ -27,6 +27,11 @@ export class AppComponent {
       this.splashScreen.hide();
     });
 
-    this.router.navigate(['auth']);
+    if (!localStorage.getItem('id')) {
+      console.log(localStorage.getItem('id'));
+      this.router.navigate(['auth']);
+    } else {
+      this.router.navigate(['tabs/Home']);
+    }
   }
 }

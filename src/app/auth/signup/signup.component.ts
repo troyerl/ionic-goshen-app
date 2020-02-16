@@ -16,6 +16,7 @@ export class SignupComponent implements OnInit {
   email: string;
   conPass: string;
   error: string;
+  sub: string;
 
   constructor(public modalController: ModalController) {}
 
@@ -34,6 +35,7 @@ export class SignupComponent implements OnInit {
       Auth.signUp(user)
           .then(data => {
             console.log(data);
+            this.sub = data.userSub;
             this.presentModal();
           })
           .catch(err => console.log(err));
@@ -46,7 +48,8 @@ export class SignupComponent implements OnInit {
     const modal = await this.modalController.create({
       component: ConfirmEmailModalComponent,
       componentProps: {
-        username: this.username
+        username: this.username,
+        sub: this.sub
       }
     });
     return await modal.present();

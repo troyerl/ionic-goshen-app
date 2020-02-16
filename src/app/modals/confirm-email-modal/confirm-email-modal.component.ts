@@ -12,6 +12,7 @@ export class ConfirmEmailModalComponent implements OnInit {
   verifycode: string;
 
   @Input() username: string;
+  @Input() sub: string;
 
   constructor(
       public modalController: ModalController,
@@ -27,8 +28,9 @@ export class ConfirmEmailModalComponent implements OnInit {
   onSubmit() {
     Auth.confirmSignUp(this.username, this.verifycode,
         {forceAliasCreation: true}).then(data => {
-            this.router.navigate(['home']);
-            this.closeModal();
+          localStorage.setItem('id', this.sub);
+            // this.router.navigate(['home']);
+          this.closeModal();
     })
         .catch(err => console.log(err));
   }
