@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'news-page-modal',
     loadChildren: () => import('./modals/news-page-modal/news-page-modal.module').then( m => m.NewsPageModalPageModule)
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
   }
 ];
 @NgModule({

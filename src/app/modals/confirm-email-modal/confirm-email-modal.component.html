@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Confirm Email</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-text>
+    An code has been sent to your email, please input that code below.
+  </ion-text>
+  <ion-item>
+    <ion-label position="floating">Code</ion-label>
+    <ion-input clear-input="true" required="true" maxlength="6" [(ngModel)]="verifycode"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="onSubmit()">Login</ion-button>
+</ion-content>

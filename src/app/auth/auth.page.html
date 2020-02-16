@@ -1,0 +1,23 @@
+<div class="auth-container">
+  <div class="top-auth">
+    <div class="top-logo-container">
+      <img src="../../assets/logo.png" alt="logo" class="top-logo">
+    </div>
+    <div class="top-buttons">
+      <a (click)="setScreenType()" class="{{login ? 'bold-class' : ''}}">Login</a>
+      <a (click)="setScreenType()" class="{{!login ? 'bold-class' : ''}}">Signup</a>
+    </div>
+    <div class="underline">
+      <div class="under-buttons" [ngStyle]="{backgroundColor: login ? '#C13D3F' : 'white'}"></div>
+      <div class="under-buttons" [ngStyle]="{backgroundColor: !login ? '#C13D3F' : 'white'}"></div>
+    </div>
+  </div>
+
+  <div *ngIf="login">
+    <app-login></app-login>
+  </div>
+  <div *ngIf="!login">
+    <app-signup></app-signup>
+  </div>
+</div>
+
