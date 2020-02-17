@@ -11,7 +11,7 @@ export class AuthPage implements OnInit {
   constructor(private modalControl: ModalController) { }
 
   ngOnInit() {
-    this.login = false;
+    this.login = true;
   }
 
   setScreenType() {

@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import {Router} from '@angular/router';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private router: Router,
+    private storage: Storage
   ) {
     this.initializeApp();
   }
@@ -27,11 +29,12 @@ export class AppComponent {
       this.splashScreen.hide();
     });
 
-    if (!localStorage.getItem('id')) {
-      console.log(localStorage.getItem('id'));
-      this.router.navigate(['auth']);
-    } else {
-      this.router.navigate(['tabs/Home']);
-    }
+    this.storage.get('id').then(item => {
+        if (item) {
+          this.router.navigate(['tabs/Home']);
+        } else {
+          this.router.navigate(['auth']);
+        }
+      });
   }
 }

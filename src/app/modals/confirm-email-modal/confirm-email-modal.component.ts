@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ModalController} from '@ionic/angular';
 import { Auth } from 'aws-amplify';
 import {Router} from '@angular/router';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-confirm-email-modal',
@@ -16,7 +17,8 @@ export class ConfirmEmailModalComponent implements OnInit {
 
   constructor(
       public modalController: ModalController,
-      private router: Router
+      private router: Router,
+      private storage: Storage
   ) {}
 
   ngOnInit() {}
@@ -28,8 +30,8 @@ export class ConfirmEmailModalComponent implements OnInit {
   onSubmit() {
     Auth.confirmSignUp(this.username, this.verifycode,
         {forceAliasCreation: true}).then(data => {
-          localStorage.setItem('id', this.sub);
-            // this.router.navigate(['home']);
+          this.storage.set('id', this.sub);
+          this.router.navigate(['home']);
           this.closeModal();
     })
         .catch(err => console.log(err));
