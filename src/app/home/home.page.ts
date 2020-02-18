@@ -6,6 +6,8 @@ import { Alert } from '../models/alert.model';
 import { ModalController } from '@ionic/angular';
 import { NewsModalPage } from '../modals/news-modal/news-modal.page';
 import {EventModalPage} from '../modals/event-modal/event-modal.page';
+import {Router} from '@angular/router';
+import {Storage} from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +24,13 @@ export class HomePage implements OnInit {
     new Alert('Announcement', 'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW', '12/18/19', 'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW'),
   ];
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, private router: Router, private storage: Storage) {
+    this.storage.get('goshen-id').then(item => {
+      if (!item) {
+        this.router.navigate(['auth']);
+      }
+    });
+  }
 
   async presentModal(news: boolean, data: {}) {
     if (news) {

@@ -1,0 +1,46 @@
+.top-auth {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.top-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.top-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.top-logo {
+  width: 50vw;
+}
+
+.under-buttons {
+  width: 50vw;
+  height: 1vh;
+}
+
+.underline {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-buttons a {
+  font-size: 1.3rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.auth-container {
+  height: 100vh;
+  background-color: white;
+}
+
+.bold-class {
+  font-weight: bold;
+}

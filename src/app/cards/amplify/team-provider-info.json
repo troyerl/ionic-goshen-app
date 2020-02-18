@@ -1,0 +1,20 @@
+{
+    "goshen": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-goshen-app-goshen-111653-authRole",
+            "UnauthRoleArn": "arn:aws:iam::777605516540:role/amplify-goshen-app-goshen-111653-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::777605516540:role/amplify-goshen-app-goshen-111653-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-goshen-app-goshen-111653-deployment",
+            "UnauthRoleName": "amplify-goshen-app-goshen-111653-unauthRole",
+            "StackName": "amplify-goshen-app-goshen-111653",
+            "StackId": "arn:aws:cloudformation:us-east-1:777605516540:stack/amplify-goshen-app-goshen-111653/95fab060-500e-11ea-a60e-0a55488d44ba",
+            "AmplifyAppId": "de8onc71865qk"
+        },
+        "categories": {
+            "auth": {
+                "goshenapp36242817": {}
+            }
+        }
+    }
+}

@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
   },
   {
     path: 'home',
@@ -33,7 +33,12 @@ const routes: Routes = [
   {
     path: 'news-page-modal',
     loadChildren: () => import('./modals/news-page-modal/news-page-modal.module').then( m => m.NewsPageModalPageModule)
-  }
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
+  },
+  { path: '**', redirectTo: 'auth' }
 ];
 @NgModule({
   imports: [

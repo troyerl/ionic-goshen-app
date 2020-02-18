@@ -13,7 +13,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../settings/settings.module').then(m => m.SettingsPageModule)
+              import('../settings/settings.module').then(m => m.SettingsPageModule),
           }
         ]
       },
@@ -49,14 +49,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/Home',
+        redirectTo: 'auth',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/Home',
+    redirectTo: 'auth',
     pathMatch: 'full'
   }
 ];

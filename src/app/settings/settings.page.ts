@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Storage} from '@ionic/storage';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-settings',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsPage implements OnInit {
   n = 4;
-  constructor() { }
+  constructor(private router: Router, private storage: Storage) {
+    this.storage.get('goshen-id').then(item => {
+      if (!item) {
+        this.router.navigate(['auth']);
+      }
+    });
+  }
 
   ngOnInit() {
   }
