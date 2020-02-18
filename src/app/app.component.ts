@@ -29,7 +29,7 @@ export class AppComponent {
       this.splashScreen.hide();
     });
 
-    this.storage.get('id').then(item => {
+    this.storage.get('goshen-id').then(item => {
         if (item) {
           this.router.navigate(['tabs/Home']);
         } else {

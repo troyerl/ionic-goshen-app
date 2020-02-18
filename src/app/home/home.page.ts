@@ -25,7 +25,7 @@ export class HomePage implements OnInit {
   ];
 
   constructor(public modalController: ModalController, private router: Router, private storage: Storage) {
-    this.storage.get('id').then(item => {
+    this.storage.get('goshen-id').then(item => {
       if (!item) {
         this.router.navigate(['auth']);
       }

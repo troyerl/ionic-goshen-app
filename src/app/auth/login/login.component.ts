@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Auth } from 'aws-amplify';
+import {Router} from '@angular/router';
+import {Storage} from '@ionic/storage';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +11,9 @@ import { Auth } from 'aws-amplify';
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
+  error: string;
 
-  constructor() { }
+  constructor(private router: Router, private storage: Storage) { }
 
   ngOnInit() {
 
@@ -23,9 +26,10 @@ export class LoginComponent implements OnInit {
     };
 
     Auth.signIn(user).then(response => {
-      console.log(response);
+      this.storage.set('goshen-id', response.attributes.sub);
+      this.router.navigate(['Home']);
     })
-        .catch(err => console.log(err));
+        .catch(err => this.error = err.message);
   }
 
 }

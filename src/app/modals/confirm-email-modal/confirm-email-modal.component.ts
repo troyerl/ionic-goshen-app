@@ -30,8 +30,8 @@ export class ConfirmEmailModalComponent implements OnInit {
   onSubmit() {
     Auth.confirmSignUp(this.username, this.verifycode,
         {forceAliasCreation: true}).then(data => {
-          this.storage.set('id', this.sub);
-          this.router.navigate(['home']);
+          this.storage.set('goshen-id', this.sub);
+          this.router.navigate(['Home']);
           this.closeModal();
     })
         .catch(err => console.log(err));

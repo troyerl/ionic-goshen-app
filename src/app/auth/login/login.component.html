@@ -7,4 +7,7 @@
   <ion-input clear-input="true" required="true" type="password" [(ngModel)]="password"></ion-input>
 </ion-item>
 
+<ion-text color="danger" *ngIf="error">
+  <p class="ion-text-center">{{error}}</p>
+</ion-text>
 <ion-button expand="block" (click)="onLogin(username, password)">Login</ion-button>
