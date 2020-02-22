@@ -4,8 +4,21 @@
   </ion-card-header>
 
   <ion-card-content>
-    <div class="">
-
+    <div class="accountDetail">
+      <ion-card-subtitle class="content-title">Full Name:</ion-card-subtitle>
+      <p>{{user.firstName + " " + user.lastName}}</p>
+    </div>
+    <div class="accountDetail">
+      <ion-card-subtitle class="content-title">Email:</ion-card-subtitle>
+      <p>{{user.email}}</p>
+    </div>
+    <div class="accountDetail">
+      <ion-card-subtitle class="content-title">Username:</ion-card-subtitle>
+      <p>{{user.username}}</p>
+    </div>
+    <div>
+      <ion-card-subtitle class="content-title">Phone Number:</ion-card-subtitle>
+      <p>{{user.phone}}</p>
     </div>
   </ion-card-content>
 </ion-card>

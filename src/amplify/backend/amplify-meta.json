@@ -1,0 +1,56 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-goshen-app-goshen-111653-authRole",
+			"UnauthRoleArn": "arn:aws:iam::777605516540:role/amplify-goshen-app-goshen-111653-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::777605516540:role/amplify-goshen-app-goshen-111653-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "amplify-goshen-app-goshen-111653-deployment",
+			"UnauthRoleName": "amplify-goshen-app-goshen-111653-unauthRole",
+			"StackName": "amplify-goshen-app-goshen-111653",
+			"StackId": "arn:aws:cloudformation:us-east-1:777605516540:stack/amplify-goshen-app-goshen-111653/95fab060-500e-11ea-a60e-0a55488d44ba",
+			"AmplifyAppId": "de8onc71865qk"
+		}
+	},
+	"auth": {
+		"goshenapp36242817": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false,
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-goshen-app-goshen-111653-deployment/amplify-cfn-templates/auth/goshenapp36242817-cloudformation-template.yml",
+				"logicalId": "authgoshenapp36242817"
+			},
+			"lastPushTimeStamp": "2020-02-15T16:23:56.771Z",
+			"output": {
+				"AppClientSecret": "1u92n8uum2kh0fm0hv5447qe86a9qktu6ite82omcjjg768rlil2",
+				"UserPoolId": "us-east-1_9Hrszc6tJ",
+				"AppClientIDWeb": "6m8lc912nekvvl7th12p1j8l8h",
+				"AppClientID": "2lmrj8hk1k5smj542tl0db2hfe",
+				"IdentityPoolId": "us-east-1:de300497-a80e-46bb-8aa4-49501c94aa97",
+				"IdentityPoolName": "goshenapp36242817_identitypool_36242817__goshen",
+				"UserPoolName": "goshenapp36242817_userpool_36242817"
+			},
+			"lastPushDirHash": "4Tf85SBtV8u9OaB3OdooXtXuzuw="
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-goshen-app-goshen-111653-deployment/amplify-cfn-templates/hosting/template.json",
+				"logicalId": "hostingS3AndCloudFront"
+			},
+			"lastPushTimeStamp": "2020-02-15T16:23:56.771Z",
+			"output": {
+				"S3BucketSecureURL": "https://goshen-app-20200215112004-hostingbucket-goshen.s3.amazonaws.com",
+				"WebsiteURL": "http://goshen-app-20200215112004-hostingbucket-goshen.s3-website-us-east-1.amazonaws.com",
+				"Region": "us-east-1",
+				"HostingBucketName": "goshen-app-20200215112004-hostingbucket-goshen"
+			},
+			"lastPushDirHash": "JJg6AHYL7s55I8zpMZYatGkhRBk="
+		}
+	}
+}

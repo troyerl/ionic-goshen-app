@@ -1,0 +1,7 @@
+{
+    "goshen": {
+        "configLevel": "project",
+        "useProfile": true,
+        "profileName": "troyerl"
+    }
+}
