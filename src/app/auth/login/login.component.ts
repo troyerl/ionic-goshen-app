@@ -35,7 +35,10 @@ export class LoginComponent implements OnInit {
       loading.dismiss();
       this.router.navigate(['/tabs/Home']);
     })
-        .catch(err => this.error = err.message);
+        .catch(err => {
+          loading.dismiss();
+          this.error = err.message;
+        });
   }
 
 }
