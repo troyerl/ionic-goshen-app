@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-  async onLogin(username: string, password: string) {
+  async onLogin() {
     this.auth.auth.signInWithEmailAndPassword(this.email, this.password).then(response => {
       this.storage.set('goshen-id', response.user.uid);
       this.router.navigate(['tabs/Home']);
