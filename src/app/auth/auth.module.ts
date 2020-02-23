@@ -12,13 +12,15 @@ import {LoginComponent} from './login/login.component';
 import {SignupComponent} from './signup/signup.component';
 
 import {ConfirmEmailModalComponent} from '../modals/confirm-email-modal/confirm-email-modal.component';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AuthPageRoutingModule
+    AuthPageRoutingModule,
+    AngularFireAuthModule
   ],
   declarations: [AuthPage, LoginComponent, SignupComponent, ConfirmEmailModalComponent],
   entryComponents: [ConfirmEmailModalComponent]

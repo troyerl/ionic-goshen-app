@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Auth } from 'aws-amplify';
-import {ModalController} from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/auth';
+import 'firebase/firestore';
 
-import {ConfirmEmailModalComponent} from '../../modals/confirm-email-modal/confirm-email-modal.component';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-signup',
@@ -16,43 +16,29 @@ export class SignupComponent implements OnInit {
   email: string;
   conPass: string;
   error: string;
-  sub: string;
 
-  constructor(public modalController: ModalController) {}
+  constructor(public auth: AngularFireAuth, private db: AngularFirestore) {}
 
   ngOnInit() {}
 
   onSignup() {
-    const user = {
-      username: this.username,
-      password: this.password,
-      attributes: {
-        email: this.email
-      }
-    };
-
     if (this.conPass === this.password) {
-      Auth.signUp(user)
-          .then(data => {
-            console.log(data);
-            this.sub = data.userSub;
-            this.presentModal();
-          })
-          .catch(err => console.log(err));
-    } else {
-      this.error = 'Passwords do not match';
+      this.auth.auth.createUserWithEmailAndPassword(this.email, this.password).then(response => {
+        this.db.collection('users').doc(response.user.uid).set({
+          firstName: '',
+          lastName: '',
+          email: this.email,
+          userId: response.user.uid,
+          username: '',
+          created: new Date(),
+          phone: '',
+          subscriptions: [],
+          teams: []
+        });
+      }).catch(err => {
+        this.error = err.message;
+      });
     }
-  }
-
-  async presentModal() {
-    const modal = await this.modalController.create({
-      component: ConfirmEmailModalComponent,
-      componentProps: {
-        username: this.username,
-        sub: this.sub
-      }
-    });
-    return await modal.present();
   }
 
 }
