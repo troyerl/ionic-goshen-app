@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: AuthPage
+  },
+  {
+    path: 'insert-info',
+    loadChildren: () => import('./signup/insert-info/insert-info.module').then( m => m.InsertInfoPageModule)
   }
 ];
 

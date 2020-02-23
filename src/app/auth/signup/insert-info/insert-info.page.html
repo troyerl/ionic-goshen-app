@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Teams You Wish To Receive Alerts On</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button color="secondary">
+        <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let team of teams | async">
+      <ion-label>{{team.sport + " " + team.level}}</ion-label>
+      <ion-checkbox value="{{team.teamId}}" slot="end"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>

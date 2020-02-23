@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
   },
+  {
+    path: 'insert-info',
+    loadChildren: () => import('./auth/signup/insert-info/insert-info.module').then( m => m.InsertInfoPageModule)
+  },
   { path: '**', redirectTo: 'auth' }
 ];
 @NgModule({
